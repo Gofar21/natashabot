@@ -1,0 +1,22 @@
+# prevent directory listings
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+	Options FollowSymlinks
+	RewriteEngine on
+
+	RewriteCond %{REQUEST_URI} !^public 
+	RewriteRule ^api(.*)$ api/web/$1 [L,PT]
+	RewriteRule ^backend/(.*)$ backend/web/$1 [L,PT]
+	RewriteRule ^(.*)$ frontend/web/$1 [L,PT]
+	RewriteRule ^generated/.*\.(php)$ - [F,L,NC]
+</IfModule>
+
+#Deny accessing below extensions
+<Files ~ "(.json|.lock|.git)">
+	Order allow,deny
+	Deny from all
+</Files>
+
+#Deny accessing dot files
+RewriteRule (^\.|/\.) - [F]
