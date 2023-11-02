@@ -1,5 +1,6 @@
 <?php
 
+use kartik\file\FileInput;
 use yii\helpers\Html;
 use yii\bootstrap5\ActiveForm;
 
@@ -20,6 +21,23 @@ use yii\bootstrap5\ActiveForm;
     <div class="row">
         <div class="col-lg-12">
             <?= $form->field($model, 'nama')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'deskripsi')->textarea(['maxlength' => true]) ?>
+            <?= $form->field(
+                $model,
+                'attachment',
+                [
+                    'enableAjaxValidation' => false,
+                    'enableClientValidation' => true,
+                ]
+            )
+                ->widget(FileInput::class, [
+                    'pluginOptions' => [
+                        'showPreview' => false,
+                        'showCaption' => true,
+                        'showRemove' => true,
+                        'showUpload' => false
+                    ]
+                ]) ?>
         </div>
     </div>
 </div>

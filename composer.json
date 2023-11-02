@@ -20,7 +20,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.4.0",
-        "yiisoft/yii2": "~2.0.45",
+        "yiisoft/yii2": "~2.0.x-dev",
         "yiisoft/yii2-bootstrap5": "~2.0.2",
         "yiisoft/yii2-symfonymailer": "~2.0.3",
         "google/cloud-dialogflow": "^1.10",
@@ -30,7 +30,8 @@
         "kartik-v/yii2-widget-fileinput": "^1.1",
         "kartik-v/yii2-widget-select2": "^2.2",
         "kartik-v/yii2-widget-depdrop": "^1.0",
-        "kartik-v/yii2-number": "^1.0"
+        "kartik-v/yii2-number": "^1.0",
+        "gumlet/php-image-resize": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

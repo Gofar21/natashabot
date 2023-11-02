@@ -17,6 +17,7 @@ use yii\helpers\ArrayHelper;
  */
 class Produk extends \yii\db\ActiveRecord
 {
+    public $attachment;
     /**
      * {@inheritdoc}
      */
@@ -35,6 +36,8 @@ class Produk extends \yii\db\ActiveRecord
             [['harga'], 'number'],
             [['produk_kategori_id'], 'integer'],
             [['nama'], 'string', 'max' => 255],
+            [['file_upload', 'deskripsi'], 'string', 'max' => 500],
+            [['attachment'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg'],
             [['produk_kategori_id'], 'exist', 'skipOnError' => true, 'targetClass' => ProdukKategori::class, 'targetAttribute' => ['produk_kategori_id' => 'id']],
         ];
     }
@@ -76,5 +79,39 @@ class Produk extends \yii\db\ActiveRecord
     public static function getOptions($filter = null)
     {
         return ArrayHelper::map(self::getDataList($filter), 'id', 'nama');
+    }
+
+    public function upload()
+    {
+        if (!empty($this->attachment)) {
+            $filename = time() . '_' . $this->id . '_' . $this->attachment->baseName . '.' . $this->attachment->extension;
+            $this->attachment->saveAs(Yii::$app->params['folder_upload']['produk'] . $filename);
+            $this->file_upload = $filename;
+            return $this->save(false);
+        } else {
+            return true;
+        }
+    }
+
+    public function fields()
+    {
+        $fields = parent::fields();
+        $fields['url_redirect'] = function ($model) {
+            return Yii::$app
+                ->urlFrontend
+                ->createAbsoluteUrl(
+                    ['/produk/detail/' . $model->id],
+                    true
+                );
+        };
+        $fields['url_file'] = function ($model) {
+            return Yii::$app
+                ->urlFrontend
+                ->createAbsoluteUrl(
+                    ['/image/view/produk/' . $model->file_upload],
+                    true
+                );
+        };
+        return $fields;
     }
 }

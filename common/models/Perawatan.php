@@ -16,6 +16,7 @@ use yii\helpers\ArrayHelper;
  */
 class Perawatan extends \yii\db\ActiveRecord
 {
+    public $attachment;
     /**
      * {@inheritdoc}
      */
@@ -33,6 +34,8 @@ class Perawatan extends \yii\db\ActiveRecord
             [['nama', 'harga'], 'required'],
             [['harga'], 'number'],
             [['nama'], 'string', 'max' => 255],
+            [['file_upload', 'deskripsi'], 'string', 'max' => 500],
+            [['attachment'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg'],
         ];
     }
 
@@ -72,5 +75,39 @@ class Perawatan extends \yii\db\ActiveRecord
     public static function getOptions($filter = null)
     {
         return ArrayHelper::map(self::getDataList($filter), 'id', 'nama');
+    }
+
+    public function fields()
+    {
+        $fields = parent::fields();
+        $fields['url_redirect'] = function ($model) {
+            return Yii::$app
+                ->urlFrontend
+                ->createAbsoluteUrl(
+                    ['/perawatan/detail/' . $model->id],
+                    true
+                );
+        };
+        $fields['url_file'] = function ($model) {
+            return Yii::$app
+                ->urlFrontend
+                ->createAbsoluteUrl(
+                    ['/image/view/perawatan/' . $model->file_upload],
+                    true
+                );
+        };
+        return $fields;
+    }
+
+    public function upload()
+    {
+        if (!empty($this->attachment)) {
+            $filename = time() . '_' . $this->id . '_' . $this->attachment->baseName . '.' . $this->attachment->extension;
+            $this->attachment->saveAs(Yii::$app->params['folder_upload']['perawatan'] . $filename);
+            $this->file_upload = $filename;
+            return $this->save(false);
+        } else {
+            return true;
+        }
     }
 }

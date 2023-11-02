@@ -1,6 +1,7 @@
 <?php
 
 use common\models\ProdukKategori;
+use kartik\file\FileInput;
 use kartik\number\NumberControl;
 use kartik\select2\Select2;
 use yii\helpers\Html;
@@ -25,6 +26,7 @@ use yii\web\JsExpression;
         <div class="col-lg-12">
             <?= $form->field($model, 'nama')->textInput(['maxlength' => true]) ?>
 
+            <?= $form->field($model, 'deskripsi')->textarea(['maxlength' => true]) ?>
             <?= $form->field($model, 'harga')
                 ->widget(NumberControl::class, [
                     'maskedInputOptions' => [
@@ -46,6 +48,22 @@ use yii\web\JsExpression;
                         'allowClear'            => false,
                         'dropdownParent' => new JsExpression('$("#myform")'),
                     ],
+                ]) ?>
+            <?= $form->field(
+                $model,
+                'attachment',
+                [
+                    'enableAjaxValidation' => false,
+                    'enableClientValidation' => true,
+                ]
+            )
+                ->widget(FileInput::class, [
+                    'pluginOptions' => [
+                        'showPreview' => false,
+                        'showCaption' => true,
+                        'showRemove' => true,
+                        'showUpload' => false
+                    ]
                 ]) ?>
         </div>
     </div>

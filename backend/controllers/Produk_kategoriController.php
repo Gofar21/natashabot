@@ -10,6 +10,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
+use yii\web\UploadedFile;
 
 /**
  * Produk_kategoriController implements the CRUD actions for ProdukKategori model.
@@ -81,7 +82,9 @@ class Produk_kategoriController extends Controller
             }
 
             $route = "";
+            $model->attachment = UploadedFile::getInstance($model, 'attachment');
             if ($model->save()) {
+                $model->upload();
                 Yii::$app->session->setFlash('noticeSuccess', "Data berhasil disimpan");
                 $route = Url::to(['index']) . '?sort=-id';
             } else {
@@ -113,7 +116,9 @@ class Produk_kategoriController extends Controller
                 return \yii\widgets\ActiveForm::validate($model);
             }
 
+            $model->attachment = UploadedFile::getInstance($model, 'attachment');
             if ($model->save()) {
+                $model->upload();
                 Yii::$app->session->setFlash('noticeSuccess', "Data berhasil disimpan");
             } else {
                 Yii::$app->session->setFlash('noticeFailed', "Data gagal disimpan");
