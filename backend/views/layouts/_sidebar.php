@@ -16,55 +16,55 @@ $rawItems = [
     ],
     [
         'title' => 'User',
-        'icon' => 'bi bi-grid-fill',
+        'icon' => 'bi bi-people-fill',
         'url' => ['/user/index'],
         'visible' => in_array('admin', $userRoles)
     ],
     [
         'title' => 'Pelanggan',
-        'icon' => 'bi bi-grid-fill',
+        'icon' => 'bi bi-person-fill',
         'url' => ['/pelanggan/index'],
         'visible' => in_array('admin', $userRoles)
     ],
     [
         'title' => 'Produk Kategori',
-        'icon' => 'bi bi-grid-fill',
+        'icon' => 'bi bi-inboxes-fill',
         'url' => ['/produk_kategori/index'],
         'visible' => in_array('admin', $userRoles)
     ],
     [
         'title' => 'Produk',
-        'icon' => 'bi bi-grid-fill',
+        'icon' => 'bi bi-cart-fill',
         'url' => ['/produk/index'],
         'visible' => in_array('admin', $userRoles)
     ],
     [
         'title' => 'Dokter',
-        'icon' => 'bi bi-grid-fill',
+        'icon' => 'bi bi-clipboard-heart-fill',
         'url' => ['/dokter/index'],
         'visible' => in_array('admin', $userRoles)
     ],
     [
         'title' => 'Klinik',
-        'icon' => 'bi bi-grid-fill',
+        'icon' => 'bi bi-hospital-fill',
         'url' => ['/klinik/index'],
         'visible' => in_array('admin', $userRoles)
     ],
     [
         'title' => 'Perawatan',
-        'icon' => 'bi bi-grid-fill',
+        'icon' => 'bi bi-handbag-fill',
         'url' => ['/perawatan/index'],
         'visible' => in_array('admin', $userRoles)
     ],
     [
         'title' => 'Promo',
-        'icon' => 'bi bi-grid-fill',
+        'icon' => 'bi bi-fire',
         'url' => ['/promo/index'],
         'visible' => in_array('admin', $userRoles)
     ],
     [
         'title' => 'Reservasi',
-        'icon' => 'bi bi-grid-fill',
+        'icon' => 'bi bi-calendar-check-fill',
         'url' => ['/reservasi/index'],
         'visible' => in_array('admin', $userRoles)
     ],
