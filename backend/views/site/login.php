@@ -6,26 +6,27 @@
 
 use yii\bootstrap5\ActiveForm;
 use yii\bootstrap5\Html;
+use yii\helpers\Url;
 
 $this->title = 'Login';
 ?>
-<div class="site-login">
-    <div class="mt-5 offset-lg-3 col-lg-6">
-        <h1><?= Html::encode($this->title) ?></h1>
-
-        <p>Please fill out the following fields to login:</p>
+<div class="card">
+    <div class="card-body p-5">
+        <img src="<?= Url::to(['/images/natasha-gold.png']) ?>" alt="" class="img-fluid w-80">
+        <hr style="background-color: #80671B;border-top: 5px solid #80671B;">
+        <h1 class="text-primary">Login Admin</h1>
 
         <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-            <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
 
-            <?= $form->field($model, 'password')->passwordInput() ?>
+        <?= $form->field($model, 'password')->passwordInput() ?>
 
-            <?= $form->field($model, 'rememberMe')->checkbox() ?>
+        <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
-            <div class="form-group">
-                <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
-            </div>
+        <div class="form-group">
+            <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
+        </div>
 
         <?php ActiveForm::end(); ?>
     </div>
