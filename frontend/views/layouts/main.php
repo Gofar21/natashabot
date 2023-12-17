@@ -28,16 +28,20 @@ AppAsset::register($this);
 <header>
     <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => '<img src="https://natasha-skin.com/wp-content/uploads/2023/11/NATASHA-LOGO.png" style=" width:159px;" alt="..." >',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
+            'class' => 'navbar navbar-expand-md navbar-light bg-light fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
+        // ['label' => 'Test', 'url' => ['/site/test']],
+        ['label' => 'Home', 'url' => ['/site']],
+        ['label' => 'About', 'url' => ['/about']],
         ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'produk', 'url' => ['/site/produk']],
+        ['label' => 'perawatan', 'url' => ['/perawatan']],
+        
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
@@ -78,7 +82,10 @@ AppAsset::register($this);
     </div>
 </footer>
 
+
 <?php $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage();
+
+
