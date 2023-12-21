@@ -1,5 +1,8 @@
+<?php
+/** @var yii\web\View $this */
+?>
 
-<!-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="https://natasha-skin.com/wp-content/uploads/2022/12/20221222-115951.jpg" class="d-block w-100" alt="...">
@@ -101,4 +104,4 @@
       </div>
     </div>
   </div>
-<!-- </div> --> -->
+</div>

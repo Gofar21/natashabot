@@ -24,8 +24,27 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 
-<body>
-    <?php $this->beginBody() ?>
+<header>
+    <?php
+    NavBar::begin([
+        'brandLabel' => '<img src="https://natasha-skin.com/wp-content/uploads/2023/11/NATASHA-LOGO.png" style=" width:159px;" alt="..." >',
+        'brandUrl' => Yii::$app->homeUrl,
+        'options' => [
+            'class' => 'navbar navbar-expand-md navbar-light bg-light fixed-top',
+        ],
+    ]);
+    $menuItems = [
+        // ['label' => 'Test', 'url' => ['/site/test']],
+        ['label' => 'Home', 'url' => ['/site']],
+        ['label' => 'About', 'url' => ['/about']],
+        ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'produk', 'url' => ['/site/produk']],
+        ['label' => 'perawatan', 'url' => ['/perawatan']],
+        
+    ];
+    if (Yii::$app->user->isGuest) {
+        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+    }
 
     <?= $content ?>
     <style>
@@ -43,8 +62,18 @@ AppAsset::register($this);
 
     </df-messenger>
 
-    <?php $this->endBody() ?>
+<footer class="footer mt-auto py-3 text-muted">
+    <div class="container">
+        <p class="float-start">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+        <p class="float-end"><?= Yii::powered() ?></p>
+    </div>
+</footer>
+
+
+<?php $this->endBody() ?>
 </body>
 
 </html>
 <?php $this->endPage();
+
+

@@ -78,6 +78,26 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionProduk()
+    {
+        return $this->render('produk');
+    }
+
+    public function actionTest()
+    {
+        return $this->render('test');
+    }
+
+    public function actionDetailproduk()
+    {
+        return $this->render('detailproduk');
+    }
+
+    public function actionSelengkapnya()
+    {
+        return $this->render('selengkapnya');
+    }
+
     /**
      * Logs in a user.
      *
