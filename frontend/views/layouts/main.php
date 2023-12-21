@@ -40,11 +40,12 @@ AppAsset::register($this);
         ['label' => 'Contact', 'url' => ['/site/contact']],
         ['label' => 'produk', 'url' => ['/site/produk']],
         ['label' => 'perawatan', 'url' => ['/perawatan']],
-        
+
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
     }
+    ?>
 
     <?= $content ?>
     <style>
@@ -62,18 +63,16 @@ AppAsset::register($this);
 
     </df-messenger>
 
-<footer class="footer mt-auto py-3 text-muted">
-    <div class="container">
-        <p class="float-start">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-        <p class="float-end"><?= Yii::powered() ?></p>
-    </div>
-</footer>
+    <footer class="footer mt-auto py-3 text-muted">
+        <div class="container">
+            <p class="float-start">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+            <p class="float-end"><?= Yii::powered() ?></p>
+        </div>
+    </footer>
 
 
-<?php $this->endBody() ?>
-</body>
+    <?php $this->endBody() ?>
+    </body>
 
 </html>
 <?php $this->endPage();
-
-
