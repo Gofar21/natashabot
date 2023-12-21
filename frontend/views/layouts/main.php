@@ -15,6 +15,7 @@ AppAsset::register($this);
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>" class="h-100">
+
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,65 +23,71 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
+
 <body class="d-flex flex-column h-100">
-<?php $this->beginBody() ?>
+    <?php $this->beginBody() ?>
 
-<header>
-    <?php
-    NavBar::begin([
-        'brandLabel' => '<img src="https://natasha-skin.com/wp-content/uploads/2023/11/NATASHA-LOGO.png" style=" width:159px;" alt="..." >',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar navbar-expand-md navbar-light bg-light fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        
-        ['label' => 'Perawatan Kami', 'url' => ['/perawatan']],
-        ['label' => 'Produk', 'url' => ['/produk']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-    }
+    <header>
+        <?php
+        NavBar::begin([
+            'brandLabel' => '<img src="https://natasha-skin.com/wp-content/uploads/2023/11/NATASHA-LOGO.png" style=" width:159px;" alt="..." >',
+            'brandUrl' => Yii::$app->homeUrl,
+            'options' => [
+                'class' => 'navbar navbar-expand-md navbar-light bg-light fixed-top',
+            ],
+        ]);
+        $menuItems = [
 
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav me-auto mb-2 mb-md-0'],
-        'items' => $menuItems,
-    ]);
-    if (Yii::$app->user->isGuest) {
-        echo Html::tag('div',Html::a('Login',['/site/login'],['class' => ['btn btn-link login text-decoration-none']]),['class' => ['d-flex']]);
-    } else {
-        echo Html::beginForm(['/site/logout'], 'post', ['class' => 'd-flex'])
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout text-decoration-none']
-            )
-            . Html::endForm();
-    }
-    NavBar::end();
-    ?>
-</header>
+            ['label' => 'Perawatan Kami', 'url' => ['/perawatan']],
+            ['label' => 'Produk', 'url' => ['/produk']],
+            ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'Contact', 'url' => ['/site/contact']],
+        ];
+        if (Yii::$app->user->isGuest) {
+            $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+        }
 
-<main role="main" class="flex-shrink-0">
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
-</main>
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav me-auto mb-2 mb-md-0'],
+            'items' => $menuItems,
+        ]);
+        if (Yii::$app->user->isGuest) {
+            echo Html::tag('div', Html::a('Login', ['/site/login'], ['class' => ['btn btn-link login text-decoration-none']]), ['class' => ['d-flex']]);
+        } else {
+            echo Html::beginForm(['/site/logout'], 'post', ['class' => 'd-flex'])
+                . Html::submitButton(
+                    'Logout (' . Yii::$app->user->identity->username . ')',
+                    ['class' => 'btn btn-link logout text-decoration-none']
+                )
+                . Html::endForm();
+        }
+        NavBar::end();
+        ?>
+    </header>
 
-<footer class="footer mt-auto py-3 text-muted">
-    <div class="container">
-        <p class="float-start">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-        <p class="float-end"><?= Yii::powered() ?></p>
-    </div>
-</footer>
+    <main role="main" class="flex-shrink-0">
+        <div class="container">
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+            <?= Alert::widget() ?>
+            <?= $content ?>
+        </div>
+    </main>
 
-<?php $this->endBody() ?>
+    <footer class="footer mt-auto py-3 text-muted">
+        <div class="container">
+            <p class="float-start">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+            <p class="float-end"><?= Yii::powered() ?></p>
+        </div>
+    </footer>
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="Natasha" agent-id="27d0d0a2-f569-401a-9207-3f7ba539d670" language-code="id">
+
+    </df-messenger>
+    <?php $this->endBody() ?>
 </body>
+
 </html>
 <?php $this->endPage();
