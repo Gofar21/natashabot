@@ -56,6 +56,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        // $intentCount = [];
+        // $intentConfidence = $reso
         return $this->render('index');
     }
 

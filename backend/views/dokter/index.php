@@ -51,10 +51,6 @@ use yii\widgets\Pjax;
 
                 <?= GridView::widget([
                     'dataProvider' => $dataProvider,
-                    'layout' => '{summary}<div class="table-responsive">{items}</div>{pager}',
-                    'pager' => [
-                        'class' => 'yii\bootstrap5\LinkPager'
-                    ],
                     'columns' => [
                         ['class' => 'yii\grid\SerialColumn'],
                         [

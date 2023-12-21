@@ -7,6 +7,19 @@ Yii::$container->set('yii\grid\CheckboxColumn', [
     ],
 ]);
 
+Yii::$container->set('yii\grid\GridView', [
+    'layout' => '{summary}<div class="table-responsive">{items}</div>{pager}',
+    'pager' => [
+        'class' => 'yii\bootstrap5\LinkPager'
+    ],
+    'tableOptions' => [
+        'class' => 'table'
+    ],
+    'headerRowOptions' => [
+        'class' => 'table-primary'
+    ]
+]);
+
 Yii::$container->set('yii\grid\SerialColumn', [
     'options' => [
         "style" => "width:85px;"

@@ -355,7 +355,7 @@ screen and (-ms-high-contrast:active) {
     --bs-gray-700: #495057;
     --bs-gray-800: #343a40;
     --bs-gray-900: #212529;
-    --bs-primary: #435ebe;
+    --bs-primary: #BF9B30;
     --bs-secondary: #6c757d;
     --bs-success: #198754;
     --bs-info: #0dcaf0;
@@ -363,7 +363,7 @@ screen and (-ms-high-contrast:active) {
     --bs-danger: #dc3545;
     --bs-light: #f8f9fa;
     --bs-dark: #131313;
-    --bs-primary-rgb: 67, 94, 190;
+    --bs-primary-rgb: 191, 155, 48;
     --bs-secondary-rgb: 108, 117, 125;
     --bs-success-rgb: 25, 135, 84;
     --bs-info-rgb: 13, 202, 240;
@@ -2428,8 +2428,8 @@ progress {
 }
 
 .table-primary {
-    --bs-table-color: #000;
-    --bs-table-bg: #d9dff2;
+    --bs-table-color: #FFF;
+    --bs-table-bg: #BF9B30;
     --bs-table-border-color: #c3c9da;
     --bs-table-striped-bg: #ced4e6;
     --bs-table-striped-color: #000;
@@ -2442,6 +2442,10 @@ progress {
 .table-primary,
 .table-secondary {
     border-color: var(--bs-table-border-color);
+    color: var(--bs-table-color)
+}
+
+.table-primary a {
     color: var(--bs-table-color)
 }
 
@@ -3614,19 +3618,19 @@ fieldset:disabled .btn {
 
 .btn-primary {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #435ebe;
-    --bs-btn-border-color: #435ebe;
+    --bs-btn-bg: #A67C00;
+    --bs-btn-border-color: #BF9B30;
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #3950a2;
-    --bs-btn-hover-border-color: #364b98;
+    --bs-btn-hover-bg: #BF9B30;
+    --bs-btn-hover-border-color: #A67C00;
     --bs-btn-focus-shadow-rgb: 95, 118, 200;
     --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #364b98;
-    --bs-btn-active-border-color: #32478f;
+    --bs-btn-active-bg: #BF9B30;
+    --bs-btn-active-border-color: #A67C00;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
     --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #435ebe;
-    --bs-btn-disabled-border-color: #435ebe
+    --bs-btn-disabled-bg: #BF9B30;
+    --bs-btn-disabled-border-color: #BF9B30;
 }
 
 .btn-secondary {
@@ -21305,7 +21309,7 @@ body .bi:before {
 }
 
 .sidebar-wrapper {
-    background-color: #fff;
+    background-color: #BF9B30;
     bottom: 0;
     height: 100vh;
     overflow-y: auto;
@@ -21351,7 +21355,7 @@ body .bi:before {
 .sidebar-wrapper .menu .sidebar-link {
     align-items: center;
     border-radius: .5rem;
-    color: #25396f;
+    color: #FFFFFF;
     display: block;
     display: flex;
     font-size: 1rem;
@@ -21362,7 +21366,7 @@ body .bi:before {
 
 .sidebar-wrapper .menu .sidebar-link i,
 .sidebar-wrapper .menu .sidebar-link svg {
-    color: #7c8db5
+    color: #FFFFFF
 }
 
 .sidebar-wrapper .menu .sidebar-link i:before {
@@ -21374,7 +21378,7 @@ body .bi:before {
 }
 
 .sidebar-wrapper .menu .sidebar-link:hover {
-    background-color: #f0f1f5
+    background-color: #A67C00
 }
 
 .sidebar-wrapper .menu .sidebar-item {
@@ -21397,17 +21401,17 @@ body .bi:before {
 }
 
 .sidebar-wrapper .menu .sidebar-item.active>.sidebar-link {
-    background-color: #435ebe
+    background-color: #FFFFFF
 }
 
 .sidebar-wrapper .menu .sidebar-item.active>.sidebar-link span {
-    color: #fff
+    color: #A67C00
 }
 
 .sidebar-wrapper .menu .sidebar-item.active>.sidebar-link i,
 .sidebar-wrapper .menu .sidebar-item.active>.sidebar-link svg {
-    fill: #fff;
-    color: #fff
+    fill: #A67C00;
+    color: #A67C00
 }
 
 .sidebar-wrapper .menu .sidebar-item.active>.sidebar-link.has-sub:after {
