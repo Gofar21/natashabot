@@ -48,14 +48,12 @@ class HistoryController extends \yii\web\Controller
                 return \yii\widgets\ActiveForm::validate($model);
             }
 
-            $route = "";
             if ($model->saveData()) {
                 Yii::$app->session->setFlash('noticeSuccess', "Data berhasil disimpan");
-                $route = Url::to(['index']) . '?sort=-id';
             } else {
                 Yii::$app->session->setFlash('noticeFailed', "Data gagal disimpan");
-                $route = Yii::$app->request->referrer;
             }
+            $route = Yii::$app->request->referrer;
             return $this->redirect($route);
         }
 
