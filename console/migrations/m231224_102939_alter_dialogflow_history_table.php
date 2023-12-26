@@ -15,7 +15,7 @@ class m231224_102939_alter_dialogflow_history_table extends Migration
     {
         $this->addColumn(self::TABLE_NAME, 'language', $this->string(50)->null());
         $this->addColumn(self::TABLE_NAME, 'labels_type', $this->string(250)->null());
-        $this->addColumn(self::TABLE_NAME, 'labels_Request_id', $this->string(250)->null());
+        $this->addColumn(self::TABLE_NAME, 'labels_request_id', $this->string(250)->null());
         $this->addColumn(self::TABLE_NAME, 'labels_protocol', $this->string(250)->null());
         $this->addColumn(self::TABLE_NAME, 'severity', $this->string(250)->null());
     }
