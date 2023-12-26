@@ -68,6 +68,12 @@ $rawItems = [
         'url' => ['/reservasi/index'],
         'visible' => in_array('admin', $userRoles)
     ],
+    [
+        'title' => 'Dialogflow History',
+        'icon' => 'bi bi-calendar-fill',
+        'url' => ['/history/index'],
+        'visible' => in_array('admin', $userRoles)
+    ],
 ];
 
 

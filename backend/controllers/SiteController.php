@@ -2,8 +2,12 @@
 
 namespace backend\controllers;
 
+use common\components\GoogleLoggingApiData;
+use common\models\DialogflowHistory;
 use common\models\LoginForm;
 use Yii;
+use yii\db\Expression;
+use yii\db\Query;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -28,7 +32,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'logging'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -58,7 +62,37 @@ class SiteController extends Controller
     {
         // $intentCount = [];
         // $intentConfidence = $reso
-        return $this->render('index');
+        $data['per_intent'] = (new Query)
+            ->select(['intent_name', 'jumlah' => new Expression("count(*)")])
+            ->from(DialogflowHistory::tableName())
+            ->where(['labels_type' => 'dialogflow_response'])
+            ->andWhere(new Expression('intent_name is not null'))
+            ->andWhere(new Expression('date(timestamp) >= date(DATE_SUB(NOW(), INTERVAL 1 MONTH))'))
+            ->andWhere(['!=', 'intent_name', 'Default Welcome Intent'])
+            ->groupBy(['intent_name'])
+            ->orderBy(['jumlah' => SORT_DESC])
+            ->limit(10)
+            ->all();
+        $tanggal = date_create('now + 1 day');
+        $data['range_tanggal'] = [];
+        $data['per_hari'] = [];
+        for ($i = 0; $i < 30; $i++) {
+            date_sub($tanggal, date_interval_create_from_date_string("1 days"));
+            $tgl = date_format($tanggal, "Y-m-d");
+            $data['range_tanggal'][] = $tgl;
+            $data['per_hari'][] = (new Query)
+                ->from(DialogflowHistory::tableName())
+                ->andWhere(['date(timestamp)' => $tgl])
+                ->andWhere(['!=', 'intent_name', 'Default Welcome Intent'])
+                ->count('distinct trace') ?: 0;
+        }
+        $data['range_tanggal']  = array_reverse($data['range_tanggal']);
+        $data['per_hari']  = array_reverse($data['per_hari']);
+
+        // echo "<pre>";
+        // print_r($data['range_tanggal']);
+        // exit();
+        return $this->render('index', $data);
     }
 
     /**
