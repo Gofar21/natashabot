@@ -78,10 +78,10 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
-    public function actionProduk()
-    {
-        return $this->render('produk');
-    }
+    // public function actionProduk()
+    // {
+    //     return $this->render('produk');
+    // }
 
     public function actionTest()
     {
