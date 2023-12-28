@@ -2,6 +2,12 @@
 
 /** @var yii\web\View $this */
 
+$this->registerJsFile("https://code.highcharts.com/highcharts.js");
+$this->registerJsFile("https://code.highcharts.com//modules/series-label.js");
+$this->registerJsFile("https://code.highcharts.com/modules/exporting.js");
+$this->registerJsFile("https://code.highcharts.com/modules/export-data.js");
+$this->registerJsFile("https://code.highcharts.com/modules/accessibility.js");
+
 ?>
 <div class="page-heading">
     <div class="page-title">
@@ -24,10 +30,8 @@
         </div>
     </div>
     <section class="row">
-        <div class="col-12">
-            <div class="row">
+        <?= $this->render("intent", ['data' => $per_intent]) ?>
+        <?= $this->render("harian", ['data' => $per_hari, 'range' => $range_tanggal]) ?>
 
-            </div>
-        </div>
     </section>
 </div>

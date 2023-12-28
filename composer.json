@@ -31,7 +31,9 @@
         "kartik-v/yii2-widget-select2": "^2.2",
         "kartik-v/yii2-widget-depdrop": "^1.0",
         "kartik-v/yii2-number": "^1.0",
-        "gumlet/php-image-resize": "dev-master"
+        "gumlet/php-image-resize": "dev-master",
+        "google/cloud-logging": "^1.22",
+        "adhocore/json-fixer": "dev-main"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

@@ -20,12 +20,12 @@ $rawItems = [
         'url' => ['/user/index'],
         'visible' => in_array('admin', $userRoles)
     ],
-    [
-        'title' => 'Pelanggan',
-        'icon' => 'bi bi-person-fill',
-        'url' => ['/pelanggan/index'],
-        'visible' => in_array('admin', $userRoles)
-    ],
+    // [
+    //     'title' => 'Pelanggan',
+    //     'icon' => 'bi bi-person-fill',
+    //     'url' => ['/pelanggan/index'],
+    //     'visible' => in_array('admin', $userRoles)
+    // ],
     [
         'title' => 'Produk Kategori',
         'icon' => 'bi bi-inboxes-fill',
@@ -38,18 +38,18 @@ $rawItems = [
         'url' => ['/produk/index'],
         'visible' => in_array('admin', $userRoles)
     ],
-    [
-        'title' => 'Dokter',
-        'icon' => 'bi bi-clipboard-heart-fill',
-        'url' => ['/dokter/index'],
-        'visible' => in_array('admin', $userRoles)
-    ],
-    [
-        'title' => 'Klinik',
-        'icon' => 'bi bi-hospital-fill',
-        'url' => ['/klinik/index'],
-        'visible' => in_array('admin', $userRoles)
-    ],
+    // [
+    //     'title' => 'Dokter',
+    //     'icon' => 'bi bi-clipboard-heart-fill',
+    //     'url' => ['/dokter/index'],
+    //     'visible' => in_array('admin', $userRoles)
+    // ],
+    // [
+    //     'title' => 'Klinik',
+    //     'icon' => 'bi bi-hospital-fill',
+    //     'url' => ['/klinik/index'],
+    //     'visible' => in_array('admin', $userRoles)
+    // ],
     [
         'title' => 'Perawatan',
         'icon' => 'bi bi-handbag-fill',
@@ -62,10 +62,16 @@ $rawItems = [
         'url' => ['/promo/index'],
         'visible' => in_array('admin', $userRoles)
     ],
+    // [
+    //     'title' => 'Reservasi',
+    //     'icon' => 'bi bi-calendar-check-fill',
+    //     'url' => ['/reservasi/index'],
+    //     'visible' => in_array('admin', $userRoles)
+    // ],
     [
-        'title' => 'Reservasi',
-        'icon' => 'bi bi-calendar-check-fill',
-        'url' => ['/reservasi/index'],
+        'title' => 'Dialogflow History',
+        'icon' => 'bi bi-calendar-fill',
+        'url' => ['/history/index'],
         'visible' => in_array('admin', $userRoles)
     ],
 ];
