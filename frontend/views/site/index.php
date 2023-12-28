@@ -26,16 +26,16 @@ $this->title = 'My Yii Application';
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://natasha-skin.com/wp-content/uploads/2023/11/promowebnov1-1.jpg" class="d-block w-100" alt="...">
+                        <img src="https://natasha-skin.com/wp-content/uploads/2023/12/promowebnatal1.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://natasha-skin.com/wp-content/uploads/2023/11/dailywebpromonov3.jpg" class="d-block w-100" alt="...">
+                        <img src="https://natasha-skin.com/wp-content/uploads/2023/12/dailywebpromodes5.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://natasha-skin.com/wp-content/uploads/2023/11/dailywebpromonov1.jpg" class="d-block w-100" alt="...">
+                        <img src="https://natasha-skin.com/wp-content/uploads/2023/12/dailywebpromodes1-1.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="https://natasha-skin.com/wp-content/uploads/2023/11/dailywebpromonov5.jpg" class="d-block w-100" alt="...">
+                        <img src="https://natasha-skin.com/wp-content/uploads/2023/12/MODISORI1.jpg" class="d-block w-100" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

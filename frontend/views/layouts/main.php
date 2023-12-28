@@ -40,7 +40,7 @@ AppAsset::register($this);
 
             ['label' => 'Perawatan Kami', 'url' => ['/perawatan']],
             ['label' => 'Produk', 'url' => ['/produk']],
-            ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'About', 'url' => ['/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
         ];
         if (Yii::$app->user->isGuest) {
