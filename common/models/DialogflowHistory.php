@@ -193,4 +193,16 @@ class DialogflowHistory extends \yii\db\ActiveRecord
             $this->getInformasiResponse();
         }
     }
+
+
+
+    public function afterFind()
+    {
+        if ($this->labels_type == "dialogflow_request") {
+            $this->getInformasiRequest();
+        } elseif ($this->labels_type == "dialogflow_response") {
+            $this->getInformasiResponse();
+        }
+        $this->save();
+    }
 }
