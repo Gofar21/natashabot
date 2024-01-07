@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "natasha-baru-trial",
+  "private_key_id": "fa555011cf2135e6154549f1869b0da58a9db420",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC8DxkTfYUYRzbH\nQL0OJJlWXk0JtYqu3sibAKUoO7wN+37+F+S8eW9VZeczy72BQnOUJhXTwy4kFAbq\n0Lp52Z1k+1yc2YmWcXLgfA6j+G1ogP/C9xwJy7LpNM17g1LfUebky6WqyVbW53vj\nHfNGPIw5hz/OU7KLWKxY5uyHXUZKgzywN3s2ELGEhlSjzogxA7hZ8EA+JYR79uZh\nQ1WZqSa2t2VqoUfQrL+WvryXKaj7CeGzwcH/eDRoGZRoNcIpfkAop35Mg3lTKmcN\nSdiDsNL6f5znhyK6sAFCClsd35oOXzTSF1vsPKlKvseuMrQGmG3eN04GfWYx4jk2\nFnmCz7c1AgMBAAECgf8C2dTKXDJRq748enC40Io18TANa+Rx1lKt080s120ZOOMG\nJ+4xnNJa6otf/aQJPBBwYMoNIynwJRx2DabrEwKCa2Di/KShdrLpcZUPYEYl22TN\np/EJqSsLGL7LQoudPYl497jSj59emgnqB5bQR9BTmXhVsnWCngaDoQgPaYIALxx3\nvT6uXLUxnsPN04sWeo9me6GKSTis9yjFOwUVS0JzKGURuHm9Dj1L7KtO5Opoy5jx\nqG51Wt8gMHzRB2LPyLXbCbYA64eNcDK5v0E0nmwhGngox0GnRPStfL11Z5BksNrN\nj/Bfl/ZEcf91A64PR2r4dUYUWV3P65xtUsxBP7ECgYEA4DsFbuUXw7vWED14zmCC\n9iYvSMmZD7QtmgcP/1hM0Srka3Pva8tEFtrJnYgc61DyPqZBai4cOEJFEDNlt9qZ\nQIy2IHZVR/FAulCe2Dk2KyUw1+Es9P6p/g0xerV0OU438QWWDV82eS6rERRqa1HO\nPqeOsbLBuaka6VcNNN/yjrECgYEA1rQclQE/gex281PGpkSp6RA3pA0/M5Oxermj\n6QUOShGqeiS1UnvuH8BRsJcQEfkzMc3QsN4WzNo1lLe9S5DJ4jSq42zQrBm5+CA5\nUU4sY1GSXdQ/qLd7n85hSHx9S3T8Nuxs/Rcxc7gCYZ6brHuftD36P93+E/mp31hb\nm+squcUCgYEAjqH8msXvj/pz+HCh3+VUaO9xNIPIcUzTlR7Y9jxc4NC/6/obWh46\nea9CgIqMmsMq1N88zSX3nXHKLLwFACZ1RbI8R/n91X2JBvsxj6kU4+0MXMZHqrAz\nwf7ycnPqMmmm/BHpmSfvprYg6wRpjUrEPuamxjJHOKpxC+zr4a5yxIECgYA/Cb7i\nmO02jmEWbGCE7OAeR96uUh1eXVzctajEf/GEGc+98Q0z3KM7u1HA0XmsbUh0tQMz\nCuIS33af5Zq0lxxPSDtsbsSN4zfQ/FUX5CXwO0EIP4s5VDX947B4geSfxQdQcPZH\nEQo5+arpUpJOgDWRzCivm9Q/tSwFIYI0M0XmKQKBgQCwIpgmJHA0ixXpxxBAwMag\nKS6L/fLpmRVDmp1a0VHWHpRtfKpl2ggH735r2r7bM8uiu7qke+eUUw5vUa8m8Q5A\nmO5PoyXQgZ5l7DW7mFfgVVvHCFxmIQY7nu3z88x8odDSBADLOureRU9dbRuzNJ30\ncHxWMM6x/MGAfP4Tghng/g==\n-----END PRIVATE KEY-----\n",
+  "client_email": "log-dialogflow@natasha-baru-trial.iam.gserviceaccount.com",
+  "client_id": "102638144736142941270",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/log-dialogflow%40natasha-baru-trial.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

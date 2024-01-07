@@ -15,7 +15,7 @@ class GoogleLoggingApiData extends Component
             // 'projectId' => 'sw-skincare',
             'keyFile' => json_decode(
                 file_get_contents(
-                    Yii::getAlias('@common') . '/config/sw-skincare-3987d60f9a13.json'
+                    Yii::getAlias('@common') . '/config/natasha-baru-trial-fa555011cf21.json'
                 ),
                 true
             )
@@ -25,7 +25,7 @@ class GoogleLoggingApiData extends Component
 
         // List log entries from a specific log.
         $entriesRequest = $logging->entries([
-            'filter' => 'logName = "projects/sw-skincare/logs/dialogflow_agent" ' .
+            'filter' => 'logName = "projects/natasha-baru-trial/logs/dialogflow_agent" ' .
                 'labels.type="dialogflow_request" ' .
                 'timestamp>="' . $awal . '" ' .
                 'timestamp<="' . $akhir . '" '
@@ -42,7 +42,7 @@ class GoogleLoggingApiData extends Component
         }
 
         $entriesResponse = $logging->entries([
-            'filter' => 'logName = "projects/sw-skincare/logs/dialogflow_agent" ' .
+            'filter' => 'logName = "projects/natasha-baru-trial/logs/dialogflow_agent" ' .
                 'labels.type="dialogflow_response" ' .
                 'timestamp>="' . $awal . '" ' .
                 'timestamp<="' . $akhir . '" '

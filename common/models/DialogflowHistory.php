@@ -183,6 +183,31 @@ class DialogflowHistory extends \yii\db\ActiveRecord
         $this->createMetadataResponse($metadataArray);
         $fulfillmentArray = $this->getArrayChild(array_slice($arrayPayload, $fulfillmentkey));
         $this->createFulfillmentResponse($fulfillmentArray);
+        // $this->createPayloadResponse($fulfillmentArray);
+    }
+
+    private function createPayloadResponse()
+    {
+        echo "<pre>";
+        $string = str_replace("Dialogflow Response :", "", $this->text_payload);
+        $string = preg_replace('/(\w+)(?=\s?\{)/', '"$1":', $string);
+        $string = preg_replace('/(\w+)(?=\s?\:)/', '"$1"', $string);
+        // $string = preg_replace('/((\r?\n)|(\r\n?))()/', ',$1', $string);
+
+        $lines = preg_split("/((\r?\n)|(\r\n?))/", $string);
+        $result = "";
+        foreach ($lines as $key => $line) {
+            $lineString = trim($line);
+            if ($key > 0 && substr($result, -1) != "{" && substr($lineString, 0, 1) != "}" && !empty($lineString)) {
+                $result .= ",";
+            }
+            $result .= $lineString;
+        }
+        $result = "{" . $result . "}";
+        echo "<pre>";
+        echo $result;
+        print_r(json_decode($result));
+        exit();
     }
 
     public function extractInformasi()
