@@ -15,7 +15,7 @@
         if (!empty($data)) {
             foreach ($data as $dt) {
         ?> {
-                    name: '<?= $dt['intent_name'] ?>',
+                    name: "<?= str_replace('"', "'", $dt['intent_name']) ?>",
                     y: <?= $dt['jumlah'] ?>
                 },
         <?php
